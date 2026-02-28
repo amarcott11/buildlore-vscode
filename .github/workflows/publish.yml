@@ -21,6 +21,11 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
+      - name: Create Open VSX namespace (if needed)
+        run: npx ovsx create-namespace buildlore --pat $OVSX_PAT || true
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+
       - name: Publish to Open VSX
         run: npx ovsx publish --no-dependencies
         env:
