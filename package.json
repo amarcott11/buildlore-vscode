@@ -1,0 +1,79 @@
+{
+  "name": "buildlore-vscode",
+  "displayName": "BuildLore — Styled Markdown Preview",
+  "description": "Preview markdown with 11 professional templates. One-click template switching, live preview, and HTML export.",
+  "version": "0.1.0",
+  "publisher": "buildlore",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "buildlore.openPreview",
+        "title": "BuildLore: Open Styled Preview",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "buildlore.openPreviewToSide",
+        "title": "BuildLore: Open Preview to Side",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "buildlore.selectTemplate",
+        "title": "BuildLore: Select Template"
+      },
+      {
+        "command": "buildlore.exportHTML",
+        "title": "BuildLore: Export as HTML"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "buildlore.openPreviewToSide",
+        "key": "ctrl+k b",
+        "when": "editorLangId == markdown"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "buildlore.openPreviewToSide",
+          "when": "editorLangId == markdown",
+          "group": "navigation"
+        }
+      ]
+    },
+    "jsonValidation": [
+      {
+        "fileMatch": ".buildlore.json",
+        "url": "./schemas/buildlore-config.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "build:prod": "node esbuild.js --minify",
+    "watch": "node esbuild.js --watch",
+    "typecheck": "tsc --noEmit -p tsconfig.extension.json && tsc --noEmit -p tsconfig.webview.json",
+    "vscode:prepublish": "npm run build:prod"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.7.0"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  }
+}

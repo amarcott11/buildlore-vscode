@@ -1,0 +1,7 @@
+src/
+out/
+out-webview/
+esbuild.js
+tsconfig*.json
+*.map
+.gitignore

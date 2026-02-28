@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BuildLore Configuration",
+  "description": "Configuration for the BuildLore VS Code extension",
+  "type": "object",
+  "properties": {
+    "template": {
+      "description": "The template to use for styled markdown preview",
+      "type": "string",
+      "enum": [
+        "Clean Technical",
+        "Ebook Modern",
+        "Product Guide",
+        "Academic",
+        "Newsletter",
+        "Craft Pattern",
+        "Minimal",
+        "Dark",
+        "Maker's Guide",
+        "Step by Step",
+        "Creative Workshop"
+      ],
+      "default": "Clean Technical"
+    }
+  },
+  "additionalProperties": false
+}
