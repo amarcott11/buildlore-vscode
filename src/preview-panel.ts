@@ -18,6 +18,7 @@ export class PreviewPanel {
   private _theme: Theme;
   private _disposables: vscode.Disposable[] = [];
   private _debounceTimer: ReturnType<typeof setTimeout> | undefined;
+  private _lastDocument: vscode.TextDocument | undefined;
 
   static createOrShow(
     context: vscode.ExtensionContext,
@@ -54,8 +55,11 @@ export class PreviewPanel {
     if (!PreviewPanel._current) return;
     PreviewPanel._current._theme = theme;
     const editor = vscode.window.activeTextEditor;
-    if (editor?.document.languageId === 'markdown') {
-      PreviewPanel._current._update(editor.document);
+    const doc = editor?.document.languageId === 'markdown'
+      ? editor.document
+      : PreviewPanel._current._lastDocument;
+    if (doc) {
+      PreviewPanel._current._update(doc);
     }
   }
 
@@ -109,6 +113,7 @@ export class PreviewPanel {
   }
 
   private _update(document: vscode.TextDocument): void {
+    this._lastDocument = document;
     const markdownText = document.getText();
     const { meta, body } = parseFrontMatter(markdownText);
     const theme = this._theme;
