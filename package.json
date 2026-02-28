@@ -2,7 +2,7 @@
   "name": "buildlore-vscode",
   "displayName": "BuildLore — Styled Markdown Preview",
   "description": "Preview markdown with 11 professional templates. One-click template switching, live preview, and HTML export.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "buildlore",
   "license": "MIT",
   "engines": {
