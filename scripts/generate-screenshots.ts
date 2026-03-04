@@ -34,7 +34,7 @@ const HERO_WIDTH = 1200;
 const HERO_HEIGHT = 800;
 
 // Which template to use for the hero screenshot (index into builtInTemplates)
-const HERO_TEMPLATE_INDEX = 0; // Clean Technical
+const HERO_TEMPLATE_INDEX = 0; // Standard
 
 function slugify(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');

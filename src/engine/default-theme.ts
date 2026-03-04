@@ -22,7 +22,7 @@ function headingDefaults(
 }
 
 export const defaultTheme: Theme = {
-  name: 'Clean Technical',
+  name: 'Standard',
   version: '1.0',
   page: {
     size: 'letter',
@@ -40,9 +40,10 @@ export const defaultTheme: Theme = {
   elements: {
     h1: headingDefaults('24pt', {
       marginTop: '0',
-      borderBottom: '2px solid #3b82f6',
+      borderBottom: '2px solid #2563eb',
       paddingBottom: '8px',
       headingStyle: 'underline',
+      headingBorderColor: '#2563eb',
     }),
     h2: headingDefaults('20pt'),
     h3: headingDefaults('16pt'),
@@ -58,8 +59,8 @@ export const defaultTheme: Theme = {
       textAlign: 'left',
     },
     blockquote: {
-      borderLeft: '4px solid #3b82f6',
-      background: '#f0f9ff',
+      borderLeft: '4px solid #2563eb',
+      background: '#eff6ff',
       padding: '16px',
       fontStyle: 'italic',
       marginBottom: '16px',

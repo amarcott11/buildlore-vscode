@@ -8,19 +8,21 @@
       "description": "The template to use for styled markdown preview",
       "type": "string",
       "enum": [
-        "Clean Technical",
-        "Ebook Modern",
-        "Product Guide",
-        "Academic",
-        "Newsletter",
-        "Craft Pattern",
-        "Minimal",
-        "Dark",
-        "Maker's Guide",
-        "Step by Step",
-        "Creative Workshop"
+        "Standard",
+        "Manuscript",
+        "Briefing",
+        "Scholar",
+        "Journal",
+        "Dispatch",
+        "Handbook",
+        "Midnight",
+        "Blueprint",
+        "Canvas",
+        "Folio",
+        "Protocol",
+        "Ink"
       ],
-      "default": "Clean Technical"
+      "default": "Standard"
     }
   },
   "additionalProperties": false

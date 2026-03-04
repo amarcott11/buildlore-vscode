@@ -17,21 +17,21 @@ function getConfigPath(): string | undefined {
 
 export function loadConfig(): BuildLoreConfig {
   const configPath = getConfigPath();
-  if (!configPath) return { template: 'Clean Technical' };
+  if (!configPath) return { template: 'Standard' };
 
   try {
-    if (!fs.existsSync(configPath)) return { template: 'Clean Technical' };
+    if (!fs.existsSync(configPath)) return { template: 'Standard' };
     const raw = fs.readFileSync(configPath, 'utf-8');
     const parsed = JSON.parse(raw) as unknown;
-    if (typeof parsed !== 'object' || parsed === null) return { template: 'Clean Technical' };
+    if (typeof parsed !== 'object' || parsed === null) return { template: 'Standard' };
 
     const obj = parsed as Record<string, unknown>;
     const template = typeof obj.template === 'string' && VALID_TEMPLATE_NAMES.has(obj.template)
       ? obj.template
-      : 'Clean Technical';
+      : 'Standard';
     return { template };
   } catch {
-    return { template: 'Clean Technical' };
+    return { template: 'Standard' };
   }
 }
 

@@ -5,7 +5,7 @@
 <h1 align="center">BuildLore — Styled Markdown Preview</h1>
 
 <p align="center">
-  Preview your markdown with 11 professional templates. One-click template switching, live preview, and HTML export — all inside VS Code.
+  Preview your markdown with 13 professional templates. One-click template switching, live preview, and HTML export — all inside VS Code.
 </p>
 
 ---
@@ -14,7 +14,7 @@
 
 ## Features
 
-- **11 Built-in Templates** — Clean Technical, Ebook Modern, Product Guide, Academic, Newsletter, Craft Pattern, Minimal, Dark, Step by Step, Creative Workshop, and the Default theme
+- **13 Built-in Templates** — Standard, Manuscript, Briefing, Scholar, Journal, Dispatch, Handbook, Midnight, Blueprint, Canvas, Folio, Protocol, and Ink
 - **Live Preview** — See styled output update as you type
 - **One-Click Template Switching** — Quickly swap between templates via the command palette or status bar
 - **HTML Export** — Export your styled markdown as a standalone HTML file
@@ -24,10 +24,16 @@
 
 | | | |
 |---|---|---|
-| ![Clean Technical](images/template-clean-technical.png) | ![Ebook Modern](images/template-ebook-modern.png) | ![Academic](images/template-academic.png) |
-| Clean Technical | Ebook Modern | Academic |
-| ![Newsletter](images/template-newsletter.png) | ![Dark](images/template-dark.png) | ![Product Guide](images/template-product-guide.png) |
-| Newsletter | Dark | Product Guide |
+| ![Standard](images/template-standard.png) | ![Manuscript](images/template-manuscript.png) | ![Briefing](images/template-briefing.png) |
+| Standard | Manuscript | Briefing |
+| ![Scholar](images/template-scholar.png) | ![Journal](images/template-journal.png) | ![Dispatch](images/template-dispatch.png) |
+| Scholar | Journal | Dispatch |
+| ![Handbook](images/template-handbook.png) | ![Midnight](images/template-midnight.png) | ![Blueprint](images/template-blueprint.png) |
+| Handbook | Midnight | Blueprint |
+| ![Canvas](images/template-canvas.png) | ![Folio](images/template-folio.png) | ![Protocol](images/template-protocol.png) |
+| Canvas | Folio | Protocol |
+| ![Ink](images/template-ink.png) | | |
+| Ink | | |
 
 ## Usage
 
@@ -42,7 +48,7 @@
 |---------|-------------|
 | `BuildLore: Open Styled Preview` | Open preview in the current editor group |
 | `BuildLore: Open Preview to Side` | Open preview in a side panel |
-| `BuildLore: Select Template` | Pick from 11 templates |
+| `BuildLore: Select Template` | Pick from 13 templates |
 | `BuildLore: Export as HTML` | Save styled output as an HTML file |
 
 ## Project Configuration
@@ -51,7 +57,7 @@ Create a `.buildlore.json` in your workspace root:
 
 ```json
 {
-  "template": "Clean Technical"
+  "template": "Standard"
 }
 ```
 

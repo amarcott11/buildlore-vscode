@@ -68,7 +68,7 @@ async function loadUsers() {
 
 | Feature          | Free Plan | Pro Plan  | Enterprise |
 |------------------|-----------|-----------|------------|
-| Templates        | 3         | 11        | Unlimited  |
+| Templates        | 3         | 13        | Unlimited  |
 | Custom Themes    | No        | Yes       | Yes        |
 | HTML Export      | Yes       | Yes       | Yes        |
 | Priority Support | No        | No        | Yes        |

@@ -1,7 +1,7 @@
 {
   "name": "buildlore-vscode",
   "displayName": "BuildLore — Styled Markdown Preview",
-  "description": "Preview markdown with 11 professional templates. One-click template switching, live preview, and HTML export.",
+  "description": "Preview markdown with 13 professional templates. One-click template switching, live preview, and HTML export.",
   "version": "0.1.4",
   "publisher": "buildlore",
   "license": "MIT",
@@ -94,7 +94,7 @@
           {
             "id": "pickTemplate",
             "title": "Pick a Template",
-            "description": "Choose from 11 built-in templates. Click the status bar item or run the command.\n\n[Select Template](command:buildlore.selectTemplate)",
+            "description": "Choose from 13 built-in templates. Click the status bar item or run the command.\n\n[Select Template](command:buildlore.selectTemplate)",
             "media": {
               "altText": "Template picker",
               "image": "images/icon.png"

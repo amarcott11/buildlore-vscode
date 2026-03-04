@@ -4,17 +4,19 @@ import { PreviewPanel } from './preview-panel';
 import { saveConfig, loadConfig } from './config';
 
 const TEMPLATE_DESCRIPTIONS: Record<string, string> = {
-  'Clean Technical': 'Left-bar headings, blue accents, Inter font',
-  'Ebook Modern': 'Serif, drop caps, justified, airy spacing',
-  'Product Guide': 'Purple accents, compact, uppercase headings',
-  'Academic': 'Times serif, justified, roman numerals, TOC',
-  'Newsletter': 'Red overline headings, wide letter-spacing',
-  'Craft Pattern': 'Playfair Display, warm earth tones, custom bullets',
-  'Minimal': 'System-ui, tight spacing, plain headings',
-  'Dark': 'Dark background, blue accents, cyan markers',
-  "Maker's Guide": 'Sage green, heart bullets, decorative HR',
-  'Step by Step': 'IKEA-style monochrome, Barlow font',
-  'Creative Workshop': 'Coral-orange, Nunito, arrow bullets',
+  'Standard': 'Clean default — Inter, blue accents, underline headings',
+  'Manuscript': 'Ebook prose — Lora + Playfair, drop caps, cover page',
+  'Briefing': 'Business report — Source Sans, navy, TOC + numbering',
+  'Scholar': 'Academic paper — Crimson Text, double-spaced, roman lists',
+  'Journal': 'Blog/essay — Source Serif + DM Serif, terracotta accent',
+  'Dispatch': 'Newsletter — Inter + Space Grotesk, red overline headings',
+  'Handbook': 'Product docs — DM Sans, violet, Stripe/Tailwind style',
+  'Midnight': 'Dark mode — gradient bg, sky-blue accents, mermaid dark',
+  'Blueprint': 'Technical spec — IBM Plex Sans, legal numbering, dashed HR',
+  'Canvas': 'Creative brief — Nunito + Sora, orange, dots texture',
+  'Folio': 'Reference work — Merriweather, forest green, paper texture',
+  'Protocol': 'SOP/runbook — Barlow, slate, grid texture, compact',
+  'Ink': 'Anti-template — system-ui, no decoration, iA Writer minimal',
 };
 
 let statusBarItem: vscode.StatusBarItem | undefined;
