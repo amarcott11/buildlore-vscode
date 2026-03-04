@@ -2,9 +2,10 @@
   "name": "buildlore-vscode",
   "displayName": "BuildLore — Styled Markdown Preview",
   "description": "Preview markdown with 11 professional templates. One-click template switching, live preview, and HTML export.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "buildlore",
   "license": "MIT",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/amarcott11/buildlore-vscode"
@@ -13,7 +14,16 @@
     "vscode": "^1.85.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "markdown",
+    "preview",
+    "templates",
+    "styled",
+    "export",
+    "html"
   ],
   "activationEvents": [
     "onLanguage:markdown"
@@ -68,13 +78,16 @@
     "build:prod": "node esbuild.js --minify",
     "watch": "node esbuild.js --watch",
     "typecheck": "tsc --noEmit -p tsconfig.extension.json && tsc --noEmit -p tsconfig.webview.json",
-    "vscode:prepublish": "npm run build:prod"
+    "vscode:prepublish": "npm run build:prod",
+    "generate-screenshots": "npx ts-node --project scripts/tsconfig.json scripts/generate-screenshots.ts"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^20.11.0",
     "@types/vscode": "^1.85.0",
     "esbuild": "^0.24.0",
+    "playwright": "^1.49.0",
+    "ts-node": "^10.9.0",
     "typescript": "^5.7.0"
   },
   "dependencies": {
