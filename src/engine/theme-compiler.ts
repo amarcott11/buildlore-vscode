@@ -799,7 +799,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ${coverPageHTML}
         <div>${html}</div>
         ${footerContent ? `<div class="pf-doc-footer">${escapeHTML(footerContent)}</div>` : ''}
-        ${showWatermark ? `<div class="pf-watermark" style="text-align:center;padding:24px 0 8px;margin-top:32px;border-top:1px solid #e5e7eb;font-size:11px;color:#9ca3af;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Made with <a href="https://buildlore.com" style="color:#6b7280;text-decoration:underline;" target="_blank" rel="noopener">BuildLore</a></div>` : ''}
+        ${showWatermark ? `<div class="pf-watermark" style="text-align:center;padding:24px 0 8px;margin-top:32px;border-top:1px solid #e5e7eb;font-size:11px;color:#9ca3af;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">Made with <a href="https://buildlore.com?utm_source=vscode&utm_medium=export_watermark" style="color:#6b7280;text-decoration:underline;" target="_blank" rel="noopener">buildlore.com</a></div>` : ''}
       </div>
     </div>
   </div>

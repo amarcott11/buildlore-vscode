@@ -55,7 +55,7 @@ export async function exportHTML(
     headerContent,
     footerContent,
     responsive: true,
-    showWatermark: false,
+    showWatermark: true,
     googleFontsLink: googleFonts,
   });
 
@@ -86,5 +86,14 @@ export async function exportHTML(
     vscode.env.openExternal(saveUri);
   } else if (action === 'Reveal in Explorer') {
     vscode.commands.executeCommand('revealFileInOS', saveUri);
+  }
+
+  // Post-export CTA
+  const cta = await vscode.window.showInformationMessage(
+    'Want PDF export, cloud publishing, or team collaboration?',
+    'Try buildlore.com',
+  );
+  if (cta === 'Try buildlore.com') {
+    vscode.env.openExternal(vscode.Uri.parse('https://buildlore.com?utm_source=vscode&utm_medium=export_cta'));
   }
 }

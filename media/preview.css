@@ -27,3 +27,33 @@ body.vscode-dark {
 body.vscode-dark .pf-preview {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
+
+/* Powered-by footer */
+.bl-powered-footer {
+  text-align: center;
+  padding: 12px 0 20px;
+  font-size: 11px;
+  color: #9ca3af;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.bl-powered-footer a {
+  color: #6b7280;
+  text-decoration: underline;
+}
+
+.bl-powered-footer a:hover {
+  color: #374151;
+}
+
+body.vscode-dark .bl-powered-footer {
+  color: #6b7280;
+}
+
+body.vscode-dark .bl-powered-footer a {
+  color: #9ca3af;
+}
+
+body.vscode-dark .bl-powered-footer a:hover {
+  color: #d1d5db;
+}

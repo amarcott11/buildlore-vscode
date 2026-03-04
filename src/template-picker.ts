@@ -39,6 +39,14 @@ function updateStatusBarFromConfig(): void {
   updateStatusBar(config.template);
 }
 
+const PREMIUM_TEMPLATES: { label: string; description: string }[] = [
+  { label: '$(lock) Magazine Spread', description: 'Multi-column editorial layout — buildlore.com' },
+  { label: '$(lock) Executive Brief', description: 'Boardroom-ready, polished — buildlore.com' },
+  { label: '$(lock) Developer Docs', description: 'API-style, syntax-highlighted — buildlore.com' },
+];
+
+const BUILDLORE_URL = 'https://buildlore.com';
+
 export async function showTemplatePicker(): Promise<void> {
   const config = loadConfig();
   const currentName = config.template;
@@ -48,12 +56,42 @@ export async function showTemplatePicker(): Promise<void> {
     description: TEMPLATE_DESCRIPTIONS[t.name] ?? '',
   }));
 
+  // Premium locked templates
+  items.push({ label: '', kind: vscode.QuickPickItemKind.Separator });
+  for (const pt of PREMIUM_TEMPLATES) {
+    items.push({ label: pt.label, description: pt.description });
+  }
+
+  // CTA link
+  items.push({ label: '', kind: vscode.QuickPickItemKind.Separator });
+  items.push({
+    label: '$(link-external) Explore more templates on buildlore.com',
+    description: '',
+    alwaysShow: true,
+  });
+
   const picked = await vscode.window.showQuickPick(items, {
     title: 'BuildLore: Select Template',
     placeHolder: 'Choose a template for your markdown preview',
   });
 
   if (!picked) return;
+
+  // Handle premium template selection → open website
+  if (picked.label.startsWith('$(lock)')) {
+    vscode.env.openExternal(
+      vscode.Uri.parse(`${BUILDLORE_URL}?utm_source=vscode&utm_medium=premium_template`),
+    );
+    return;
+  }
+
+  // Handle "Explore more" link
+  if (picked.label.startsWith('$(link-external)')) {
+    vscode.env.openExternal(
+      vscode.Uri.parse(`${BUILDLORE_URL}?utm_source=vscode&utm_medium=template_picker`),
+    );
+    return;
+  }
 
   // Strip the checkmark icon prefix if present
   const templateName = picked.label.replace(/^\$\(check\) /, '');

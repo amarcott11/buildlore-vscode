@@ -204,6 +204,9 @@ export class PreviewPanel {
   <div id="fonts-container"></div>
   <div id="styles-container"></div>
   <div class="pf-preview" id="content"></div>
+  <div class="bl-powered-footer">
+    Styled with <a href="https://buildlore.com?utm_source=vscode&utm_medium=preview_footer">buildlore.com</a>
+  </div>
   <script src="${webviewUri}"></script>
 </body>
 </html>`;

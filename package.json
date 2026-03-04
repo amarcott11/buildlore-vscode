@@ -2,7 +2,7 @@
   "name": "buildlore-vscode",
   "displayName": "BuildLore — Styled Markdown Preview",
   "description": "Preview markdown with 11 professional templates. One-click template switching, live preview, and HTML export.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "publisher": "buildlore",
   "license": "MIT",
   "icon": "images/icon.png",
@@ -48,6 +48,10 @@
       {
         "command": "buildlore.exportHTML",
         "title": "BuildLore: Export as HTML"
+      },
+      {
+        "command": "buildlore.exportPDF",
+        "title": "BuildLore: Export to PDF via buildlore.com"
       }
     ],
     "keybindings": [
@@ -70,6 +74,51 @@
       {
         "fileMatch": ".buildlore.json",
         "url": "./schemas/buildlore-config.json"
+      }
+    ],
+    "walkthroughs": [
+      {
+        "id": "buildlore.getStarted",
+        "title": "Get Started with BuildLore",
+        "description": "Preview styled markdown with professional templates.",
+        "steps": [
+          {
+            "id": "openPreview",
+            "title": "Open a Styled Preview",
+            "description": "Open any markdown file and press ``Ctrl+K B`` to see it styled with a professional template.\n\n[Open Preview to Side](command:buildlore.openPreviewToSide)",
+            "media": {
+              "altText": "BuildLore styled preview",
+              "image": "images/icon.png"
+            }
+          },
+          {
+            "id": "pickTemplate",
+            "title": "Pick a Template",
+            "description": "Choose from 11 built-in templates. Click the status bar item or run the command.\n\n[Select Template](command:buildlore.selectTemplate)",
+            "media": {
+              "altText": "Template picker",
+              "image": "images/icon.png"
+            }
+          },
+          {
+            "id": "exportHtml",
+            "title": "Export as HTML",
+            "description": "Export your styled markdown as a standalone HTML file you can share anywhere.\n\n[Export as HTML](command:buildlore.exportHTML)",
+            "media": {
+              "altText": "Export to HTML",
+              "image": "images/icon.png"
+            }
+          },
+          {
+            "id": "goPro",
+            "title": "Go Further with buildlore.com",
+            "description": "Get PDF export, cloud publishing, team collaboration, and even more templates at buildlore.com.\n\n[Visit buildlore.com](https://buildlore.com?utm_source=vscode&utm_medium=walkthrough)",
+            "media": {
+              "altText": "BuildLore website",
+              "image": "images/icon.png"
+            }
+          }
+        ]
       }
     ]
   },

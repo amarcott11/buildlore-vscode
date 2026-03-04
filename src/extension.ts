@@ -5,6 +5,8 @@ import { exportHTML } from './export-html';
 import { watchConfig } from './config';
 import { builtInTemplates } from './engine/templates';
 
+const BUILDLORE_URL = 'https://buildlore.com';
+
 export function activate(context: vscode.ExtensionContext): void {
   // Register commands
   context.subscriptions.push(
@@ -32,6 +34,12 @@ export function activate(context: vscode.ExtensionContext): void {
         await exportHTML(context, editor.document);
       }
     }),
+
+    vscode.commands.registerCommand('buildlore.exportPDF', () => {
+      vscode.env.openExternal(
+        vscode.Uri.parse(`${BUILDLORE_URL}?utm_source=vscode&utm_medium=export_pdf`),
+      );
+    }),
   );
 
   // Status bar
@@ -47,6 +55,24 @@ export function activate(context: vscode.ExtensionContext): void {
       }
     }),
   );
+
+  // First-install welcome notification
+  const hasShownWelcome = context.globalState.get<boolean>('buildlore.welcomeShown');
+  if (!hasShownWelcome) {
+    context.globalState.update('buildlore.welcomeShown', true);
+    vscode.window
+      .showInformationMessage(
+        'Welcome to BuildLore! Preview styled markdown right here, or visit buildlore.com for PDF export, publishing, and more.',
+        'Visit buildlore.com',
+      )
+      .then((action) => {
+        if (action === 'Visit buildlore.com') {
+          vscode.env.openExternal(
+            vscode.Uri.parse(`${BUILDLORE_URL}?utm_source=vscode&utm_medium=welcome`),
+          );
+        }
+      });
+  }
 }
 
 export function deactivate(): void {
